@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Empresa dedicada a la estética vehicular, realizamos tratamientos full detail, polarizados y aplicación de láminas PPF.">
+    <meta name="keywords" content="DETAILING, ESTETICA VEHICULAR, POLARIZADOS, PPF, DETAIL GARAGE">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./assets/css/estilos.css">
+    <title>Detail Garage</title>
+</head>
+
+<body>
+<!-- Inicio del Nav -->
+    <nav class="navbar d-flex ">
+        <a class="navbar-brand" href="#">
+            <img class="img__logo animate__animated animate__bounceIn" src="./assets/img/Logo_Detail_Garage.png" alt="logo">
+        </a>            
+        <div class="nav d-flex mx-auto justify-content-center flex-wrap" id="navbarsExample04">
+            <form class="d-flex flex-row my-4 gap-2" id=formulario>
+                <input class="form-control" id="buscar" type="search" placeholder="Buscar">
+                <button class="btn btn-primary" type="submit" aria-label="Buscar">
+                    <i class="bi bi-search "></i>
+                </button>             
+            </form>
+            <button class="btn btn-primary btn-lg mx-4 position-relative" data-bs-toggle="modal" data-bs-target="#exampleModal"type="button" aria-label="Search">
+                <span class="position-absolute top-100 start-100 translate-middle badge rounded-pill bg-danger" id="badge">0</span>
+                <i class="bi bi-cart4" ></i>
+            </button>
+        </div>
+    </nav>
+<!-- Fin Nav -->
+
+<!--Inicio Bloque Main-->
+    <main class="">
+
+        <!-- Título -->
+        <section class="tienda">
+            <h1 class="text-light tienda__titulo">Tienda Online</h1>    
+        </section>
+
+        <!-- Sección filtros -->
+        <section class="container">   
+            <div class="col-lg d-flex flex-wrap justify-content-center text-light">
+                <h5 class="cat__titulo mx-3">Ver: </h5>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                    <label class="fs-5 form-check-label" for="inlineRadio1">Todos</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="fs-5 form-check-label" for="inlineRadio2">Shampoos </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                    <label class="fs-5 form-check-label" for="inlineRadio3">Ceras</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                    <label class="fs-5 form-check-label" for="inlineRadio4">Cepillos</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+                    <label class="fs-5 form-check-label" for="inlineRadio5">Guantes, paños y microfibras</label>
+                </div>  
+            </div>
+        </section>
+
+        <!-- Modal del carrito --> 
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">         
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Item</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">Acción</th>
+                                        <th scope="col">Total</th>
+                                    </tr>
+                                </thead>
+                                <!-- Espacio donde se va a mostrar el contenido de mi carrito -->
+                                <tbody id="items"></tbody>
+                                <tfoot>
+                                <!-- Footer del contenido del carrito -->
+                                    <tr id="footer-carrito">
+                                        <th scope="row" colspan="1">Carrito vacío</th>
+                                    </tr>
+                                </tfoot>
+                            </table> 
+                        </div>                           
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="finalizar" data-bs-toggle="modal" data-bs-target="#exampleModal2">Finalizar Compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para el final de la compra -->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel2">Resumen de la compra</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">         
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Item</th>
+                                        <th scope="col">Cantidad</th>                                        
+                                        <th scope="col">Total</th>
+                                    </tr>
+                                </thead>
+                                <!-- Espacio donde se va a mostrar el contenido final de la compra -->
+                                <tbody id="items-finalizar"></tbody>
+                                <tfoot>
+                                <!-- Footer del contenido del resumen total de la compra -->
+                                    <tr id="footer-finalizar">
+                                        <th scope="row" colspan="1  "></th>
+                                    </tr>
+                                </tfoot>
+                            </table> 
+                        </div>                           
+                    </div>
+                    
+                    <!-- Formulario para finalizar la compra -->
+                    <form class="needs-validation text-center" id="formulario-compra">
+                        <p>Ingrese sus datos (valores seteados por defecto para fines prácticos)</p>
+                        <div class="col-6 mx-auto my-3">
+                          <label for="validationCustom01" class="form-label">Nombre:</label>
+                          <input type="text" class="form-control border-info" id="validationCustom01" value="Juan" placeholder="Ingrese aquí su nombre"required>
+                        </div>
+                        <div class="col-6 mx-auto my-3">
+                          <label for="validationCustom02" class="form-label">Apellido:</label>
+                          <input type="text" class="form-control border-info" id="validationCustom02" value="López" placeholder="Ingrese aquí su apellido"required>
+                        </div>
+                        <div class="col-6 mx-auto my-3">                          
+                            <label for="validationCustom03" class="form-label">Correo Electrónico:</label>
+                            <input type="email" class="form-control border-info" id="validationCustom03" value="juanlopez@mail.com" placeholder="Ingrese aquí su email" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#exampleModal">Volver al carrito</button>
+                            <button class="btn btn-success" id="comprar" type="submit" aria-label="formulario-compra">Comprar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lugar donde voy a mostrar mis productos -->        
+        <div class="row justify-content-center" id="contenedor-productos" ></div>
+
+    <!--Templates para mostrar tarjetas, footer del carrito, badge e interior del carrito -->
+
+        <!-- Template Card -->
+        <template id="template-card">
+            <div class="tarjetas text-center d-flex flex-column justify-content-between" data-aos="flip-left" data-aos-duration="800" data-aos-offset="10">
+                <h5 class="product__card__titulo card-title"></h5>
+                <p class="product__card__precio card-text">$ <span></span></p>
+                <img class="img-fluid" src="" alt="img_producto">
+                <button id="agregar" class="mt-3 btn btn-primary">Agregar al carrito</button>
+            </div>
+        </template>
+
+        <!-- Template footer del carrito -->
+        <template id="template-footer">
+            <th scope="row">Total productos</th>
+            <td>10</td>
+            <td>
+                <button class="btn btn-danger" id="vaciar-carrito">Vaciar Carrito</button>
+            </td>
+            <td class="font-weight-bold">$ <span>5000</span></td>
+        </template>
+        
+        <!-- Template interior del carrito -->    
+        <template id="template-carrito">
+            <tr>
+                <td>Nombre</td>
+                <td>Cantidad</td>
+                <td>
+                    <button class="btn btn-success agregar">
+                        +
+                    </button>
+                    <button class="btn btn-danger quitar">
+                        -
+                    </button>
+                </td>
+                <td>$ <span></span></td>
+            </tr>
+        </template>
+
+        <!-- Template del resumen final de la compra -->
+        <template id="template-finalizar">
+            <tr>
+                <td>Nombre</td>
+                <td>Cantidad</td>
+                <td>$ <span></span></td>
+            </tr>
+        </template>
+
+        <!-- Template footer del fin de la compra -->
+        <template id="template-footer-finalizar">
+            <th scope="row" colspan="1">Total productos</th>
+            <td>10</td>
+            <td class="font-weight-bold">$ <span>5000</span></td>
+        </template>
+
+        <!-- Template Badge -->
+        <template id="template-badge">
+            <span>10</span>
+        </template>
+    </main>    
+<!--Fin bloque Main-->
+
+<!--inicio footer-->
+    <footer class="container-fluid">        
+        <section class="footer__imagenes">
+            <picture>
+                <img class="footer__logo" src="./assets/img/Logo_Detail_Garage.png" alt="logo">
+            </picture>                     
+            <picture>
+                <img class="footer__redes" src="./assets/img/facebook.png" alt="Facebook">
+            </picture>
+            <picture>
+                <img class="footer__redes" src="./assets/img/whatsapp.png" alt="Whatsapp">
+            </picture>
+            <picture>
+                <img class="footer__redes" src="./assets/img/instagram.png" alt="Instagram">
+            </picture>
+        </section>                             
+    </footer>
+<!--Fin footer-->
+
+        <!-- Script App JS -->
+        <script src="./app.js"></script>
+        <!-- Sweet Alert 2-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.1/dist/sweetalert2.all.min.js"></script>
+        <!-- Toastify -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <!-- Boostrap -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <!-- Iconify -->
+        <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+        <!-- AOS Animations -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+</body>
+</html>

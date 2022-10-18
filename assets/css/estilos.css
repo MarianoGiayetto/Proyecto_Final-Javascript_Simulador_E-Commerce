@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+:root {
+    /*Coloress*/
+    --primary:#29274c;
+    --secondary:#fb3640;
+    --alternative:#003049;
+    --text-color:#14213d;
+    --text-color-light:#ede6f2;
+    --card-color: #ffffff;    
+    
+    /*Fondos*/
+    --fondo-main: linear-gradient(to bottom, #eeeef0, #ffffff);
+    --fondo-header: linear-gradient(to top, #757f9a, #d7dde8);
+    --toast-color: linear-gradient(to right, #309c05, #73b109); 
+
+    /*Espaciado*/
+    --spacing-large: 6rem;
+    --spacing-medium: 2.4rem;
+    --spacing-small: 2rem;
+    --spacing-xsmall: 1rem;
+
+    /*Fuentes*/
+    --font-principal:'Anek', sans-serif;
+    --font-titulo:'Kanit', sans-serif;
+
+    /*Tamaño Fuentes*/
+    --text-large: 5.2em;
+    --text-medium: 2.2em;
+    --text-base: 1.6em;
+    --text-small: 1.4em;
+    --text-xsmall: 1em;
+}
+
+/* Estilos Globales */
+
+*::after,
+*::before,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* html {
+    font-size: 62.5%;
+}
+ */
+/* body {
+    font-family: var(--font-principal);
+    min-height: 75rem;
+    
+} */
+
+ul{
+    list-style-type:none;
+}
+
+a{
+    text-decoration:none;
+    font-family: var(--font-principal);
+    color:var(--text-color)
+}
+
+/* img{
+    width:100%;
+} */
+
+main {
+    background-image:url(../img/erik-mclean-ZRns2R5azu0-unsplash.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:center center;
+}
+
+
+.img__logo {
+    height: 200px;
+    width: auto;
+    
+}
+
+/* Estilos Main */
+.navbar{
+    background: var(--fondo-header);
+    opacity: 95%;
+}
+
+.bi-cart4{
+    font-size: var(--text-medium);
+}
+
+.tienda__titulo{
+    font-family: var(--font-titulo);
+    padding: var(--spacing-large);
+    text-align: center;
+    color: var(--primary);
+    font-size: var(--text-medium);
+}
+
+.tarjetas{
+    width: 12em;
+    height: auto;
+    background-color: var(--card-color);
+    border-radius: 10px;
+    border: 5px outset lightslategray;
+    margin: var(--spacing-xsmall); 
+    background-color: #ffffff;
+       
+}
+
+.product__card__titulo{
+    font-family: var(--font-titulo);
+    margin-bottom: var(--spacing-xsmall);
+}
+
+.product__card__precio{
+    font-family: var(--font-titulo);
+}
+
+.filtro{
+    position: relative;
+   
+}
+
+.swal-text {
+    font-family: var(--font-titulo);
+    text-align: center;
+    color: black;
+  }
+
+/* Estilos Footer */
+footer{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: var(--spacing-small) 0;  
+    flex-wrap:wrap; 
+    background: var(--fondo-header);       
+}
+
+.footer__logo{
+    max-width: 120px;
+}
+
+.footer__imagenes{
+    display: flex;
+    align-items: center;
+    gap:var(--spacing-small);
+}
+
+.footer__redes:hover{
+    animation: move 1s ease infinite;
+    cursor: pointer;
+}
+@keyframes move {
+    30% { 
+        transform: scale(1.2); 
+    }
+    40%, 60% { 
+        transform: rotate(-20deg) scale(1.2); 
+    }
+    50% { 
+        transform: rotate(20deg) scale(1.2); 
+    }
+    70% { 
+        transform: rotate(0deg) scale(1.2); 
+    }
+    100% { 
+        transform: scale(1); 
+    }
+  }
+
+
+
+@media (max-width:500px){
+    .img__logo {
+        height: 120px;
+        width: auto;        
+    }
+}

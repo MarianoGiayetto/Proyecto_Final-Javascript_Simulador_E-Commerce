@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "nombre": "Shampoo Meguiars NXT Generation Car Wash (1.89 L.)",
+    "precio": 7600,
+    "img": "./assets/img/shampoo_nxt.jpg",
+    "categoria": "shampoo"
+  },
+  {
+    "id": 2,
+    "nombre": "Shampoo Mothers California Gold Car Wash (1.89 L.)",
+    "precio": 9500,
+    "img": "./assets/img/shampoo_california_gold.jpg",
+    "categoria": "shampoo"
+  },
+  {
+    "id": 3,
+    "nombre": "Shampoo Sonax Xtreme wash & Dry (1 L.)",
+    "precio": 6000,
+    "img": "./assets/img/shampoo_dry_xtreme.png",
+    "categoria": "shampoo"
+  },
+  {
+    "id": 4,
+    "nombre": "Shampoo 3D Pink Car Soap (4 L.)",
+    "precio": 6400,
+    "img": "./assets/img/shampoo_pink_car_soap.jpg",
+    "categoria": "shampoo"
+  },
+  {
+    "id": 5,
+    "nombre": "Cera Mothers California Gold Synthetic Paste Wax (311 gr.)",
+    "precio": 6500,
+    "img": "./assets/img/cera_california_gold.gif",
+    "categoria": "cera"
+  },
+  {
+    "id": 6,
+    "nombre": "Cera rápida Sonax High Speed Wax (500 mL.)",
+    "precio": 6500,
+    "img": "./assets/img/cera_high_speed_wax.png",
+    "categoria": "cera"
+  },
+  {
+    "id": 7,
+    "nombre": "Cera Meguiars NXT Generation Tech Wax (311 gr.)",
+    "precio": 9000,
+    "img": "./assets/img/cera_nxt_wax_paste.jpg",
+    "categoria": "cera"
+  },
+  {
+    "id": 8,
+    "nombre": "Cera rápida 3M Quick Wax (473 mL.)",
+    "precio": 3800,
+    "img": "./assets/img/cera_quick_wax.jpg",
+    "categoria": "cera"
+  },
+  {
+    "id": 9,
+    "nombre": "Cepillo 3M para llantas y fundas",
+    "precio": 1000,
+    "img": "./assets/img/CELLYF1_500x.webp",
+    "categoria": "cepillo"
+  },
+  {
+    "id": 10,
+    "nombre": "Cepillo 3M duro para alfombras",
+    "precio": 1500,
+    "img": "./assets/img/CEPDALF_500x.webp",
+    "categoria": "cepillo"
+  },
+  {
+    "id": 11,
+    "nombre": "Cepillo 3M para pasaruedas",
+    "precio": 3000,
+    "img": "./assets/img/CPAS1_500x.webp",
+    "categoria": "cepillo"
+  },
+  {
+    "id": 12,
+    "nombre": "Guante de lavado premium",
+    "precio": 3800,
+    "img": "./assets/img/guante_lavadol.jpg",
+    "categoria": "micros"
+  },
+  {
+    "id": 13,
+    "nombre": "Microfibra Waffle de secado (60x40 cm.)",
+    "precio": 2500,
+    "img": "./assets/img/microfibra-abc-waffle.jpg",
+    "categoria": "micros"
+  },
+  {
+    "id": 14,
+    "nombre": "Microfibra amarilla gold pelo corto (40x40 cm.)",
+    "precio": 1000,
+    "img": "./assets/img/microfibra_lavado.jpg",
+    "categoria": "micros"
+  },
+  {
+    "id": 15,
+    "nombre": "Microfibra amarilla pulido (40x40 cm.)",
+    "precio": 1400,
+    "img": "./assets/img/microfibra_pl_pc.jpg",
+    "categoria": "micros"
+  }
+]
